@@ -10,13 +10,17 @@ app.set('views', path.join(__dirname, 'views'));
 
 app.set('view engine', 'ejs')
 
+router.use(express.urlencoded({ extended: true}));
+
+app.use(express.static('public'))
+
 app.get('/',function (req, res) {
 res.render('pages/index')
 });
 
-router.use(express.urlencoded({ extended: true}));
-
-app.use(express.static('public'))
+app.get('/students', function(req, res) {
+    res.render('pages/students')
+});
 
 app.get('/sendFunds', function(req, res) {
     res.render('pages/sendFunds')
