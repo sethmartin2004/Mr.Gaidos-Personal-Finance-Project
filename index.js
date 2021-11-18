@@ -1,14 +1,17 @@
-var express = require('express');
+const express = require('express');
+const router = require('express').Router();
 const app = express();
+
 const path = require('path');
-var router = require('express').Router();
+
+const ejs = require('ejs');
 
 app.set('views', path.join(__dirname, 'views'));
 
 app.set('view engine', 'ejs')
 
-app.get('/', function(req, res) {
-    res.sendFile('index.html', {root: __dirname })
+app.get('/',function (req, res) {
+res.render('pages/index')
 });
 
 router.use(express.urlencoded({ extended: true}));
@@ -16,11 +19,11 @@ router.use(express.urlencoded({ extended: true}));
 app.use(express.static('public'))
 
 app.get('/sendFunds', function(req, res) {
-    res.sendFile('views/getComments.html', {root: __dirname })
+    res.render('pages/sendFunds')
 });
 
 app.get('/Funds', function(req, res) {
-    res.sendFile('views/Comments.html', {root: __dirname })
+    res.render('pages/Funds')
 });
 
 var server = app.listen(5000, function () {
