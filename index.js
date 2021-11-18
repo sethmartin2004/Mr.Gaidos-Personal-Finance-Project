@@ -24,8 +24,16 @@ router.use(express.urlencoded({ extended: true}));
 
 app.use(express.static('public'))
 
+app.get('/teacher',function (req, res) {
+res.render('pages/teacher')
+});
+
 app.get('/',function (req, res) {
-res.render('pages/index')
+res.render('pages/or')
+});
+
+app.get('/teacherlogin', function(req, res) {
+    res.render('pages/teacherlogin')
 });
 
 app.get('/students', function(req, res) {
@@ -33,11 +41,11 @@ app.get('/students', function(req, res) {
 });
 
 app.get('/sendFunds', function(req, res) {
-    res.render('pages/sendFunds')
+    res.render('pages/sendfunds')
 });
 
 app.get('/Funds', function(req, res) {
-    res.render('pages/Funds')
+    res.render('pages/funds')
 });
 
 var server = app.listen(5000, function () {
