@@ -25,6 +25,10 @@ app.get('/',function (req, res) {
 res.render('pages/or')
 });
 
+app.get('/studentlogin', function(req, res) {
+    res.render('pages/studentlogin')
+});
+
 app.get('/teacherlogin', function(req, res) {
     res.render('pages/teacherlogin')
 });
