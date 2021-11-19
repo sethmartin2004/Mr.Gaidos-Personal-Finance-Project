@@ -25,6 +25,14 @@ div {
     <input type="checkbox" id="Student" name="Student" value="Student">
     <label for="Student">Student</label>
     <p><input type="button" onclick="location.href='http://localhost:5000/teachertransfer?';" value="Transer to Students" /></p>
+  <div>
+      <input type="button" onclick="location.href='http://localhost:5000/?';" value="Go Back" />
+      <%- JSON.stringify(rows) %>
+      <% for (let i = 0; i < rows.length; i++) { %>
+        <p>
+        <%- rows[i].name %>
+      </p>
+        <% } %>
     </div>
   </body>
 </html>
