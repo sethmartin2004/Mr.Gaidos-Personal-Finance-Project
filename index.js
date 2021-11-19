@@ -4,7 +4,7 @@ const app = express();
 var sqlite3 = require('sqlite3').verbose();
 var db = new sqlite3.Database('Bank.db');
 
-db.close();
+//db.close();
 const path = require('path');
 
 const ejs = require('ejs');
