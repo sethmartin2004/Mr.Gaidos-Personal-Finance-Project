@@ -18,7 +18,7 @@ router.use(express.urlencoded({ extended: true}));
 app.use(express.static('public'))
 
 app.get('/teacher',function (req, res) {
-res.render('pages/teacher')
+res.render('pages/teacheraccess')
 });
 
 app.get('/',function (req, res) {
@@ -52,12 +52,8 @@ app.get('/students', function(req, res) {
   });
 });
 
-app.get('/sendFunds', function(req, res) {
-    res.render('pages/sendfunds')
-});
-
-app.get('/Funds', function(req, res) {
-    res.render('pages/funds')
+app.get('/teachertransfer', function(req, res) {
+    res.render('pages/teachertransfer')
 });
 
 var server = app.listen(5000, function () {
