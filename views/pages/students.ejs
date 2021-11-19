@@ -6,7 +6,10 @@
     <style>
 h1 {text-align: center;}
 p {text-align: center;}
-div {text-align: center;}
+div {
+  text-align: justify;
+  text-align-last: center;
+}
 </style>
 <body style="background: url('https://coolbackgrounds.io/images/backgrounds/index/ranger-4df6c1b6.png');
             background-repeat: no-repeat;
@@ -17,8 +20,11 @@ div {text-align: center;}
   <body>
     <body>
     <h1>Students</h1>
-  <div>
-      <input type="button" onclick="location.href='http://localhost:5000/?';" value="Go Back" />
+    <p><input type="button" onclick="location.href='http://localhost:5000/?';" value="Go Back" /></p>
+    <div>
+    <input type="checkbox" id="Student" name="Student" value="Student">
+    <label for="Student">Student</label>
+    <p><input type="button" onclick="location.href='http://localhost:5000/teachertransfer?';" value="Transer to Students" /></p>
     </div>
   </body>
 </html>
