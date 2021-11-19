@@ -36,6 +36,14 @@ app.get('/studentlogin', function(req, res) {
     res.render('pages/studentlogin')
 });
 
+app.get('/studentaccess', function(req, res) {
+    res.render('pages/studentaccess')
+});
+
+app.get('/studenttransfer', function(req, res) {
+    res.render('pages/studenttransfer')
+});
+
 app.get('/teacherlogin', function(req, res) {
     res.render('pages/teacherlogin')
 });
