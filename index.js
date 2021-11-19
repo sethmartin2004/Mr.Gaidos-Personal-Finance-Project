@@ -4,14 +4,7 @@ const app = express();
 var sqlite3 = require('sqlite3').verbose();
 var db = new sqlite3.Database('Bank.db');
 
-
-db.get("SELECT * FROM bank", function(err, row) {
-  if (err) console.log(err);
-    console.log(row);
-});
-db.close();
-
-
+// db.close();
 const path = require('path');
 
 const ejs = require('ejs');
@@ -37,7 +30,14 @@ app.get('/teacherlogin', function(req, res) {
 });
 
 app.get('/students', function(req, res) {
-    res.render('pages/students')
+  db.all("SELECT * FROM bank", function(err, rows) {
+    if (err) {
+      console.log(err)
+    } else if (rows) {
+      console.log(rows);
+      res.render('pages/students', {rows: rows})
+    }
+  });
 });
 
 app.get('/sendFunds', function(req, res) {
