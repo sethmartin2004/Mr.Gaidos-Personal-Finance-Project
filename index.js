@@ -11,7 +11,7 @@ db.get("SELECT * FROM bank", function(err, row) {
 });
 db.close();
 
-/*
+
 const path = require('path');
 
 const ejs = require('ejs');
@@ -52,4 +52,3 @@ var server = app.listen(5000, function () {
   var PORT = 5000
   console.log('User Conncted')
 })
-*/
