@@ -13,32 +13,34 @@ app.set('views', path.join(__dirname, 'views'));
 
 app.set('view engine', 'ejs')
 
-router.use(express.urlencoded({ extended: true}));
+router.use(express.urlencoded({
+  extended: true
+}));
 
 app.use(express.static('public'))
 
-app.get('/teacher',function (req, res) {
-res.render('pages/teacheraccess')
+app.get('/teacher', function(req, res) {
+  res.render('pages/teacheraccess')
 });
 
-app.get('/',function (req, res) {
-res.render('pages/or')
+app.get('/', function(req, res) {
+  res.render('pages/or')
 });
 
 app.get('/studentlogin', function(req, res) {
-    res.render('pages/studentlogin')
+  res.render('pages/studentlogin')
 });
 
 app.get('/studentaccess', function(req, res) {
-    res.render('pages/studentaccess')
+  res.render('pages/studentaccess')
 });
 
 app.get('/studenttransfer', function(req, res) {
-    res.render('pages/studenttransfer')
+  res.render('pages/studenttransfer')
 });
 
 app.get('/teacherlogin', function(req, res) {
-    res.render('pages/teacherlogin')
+  res.render('pages/teacherlogin')
 });
 
 app.get('/students', function(req, res) {
@@ -47,16 +49,18 @@ app.get('/students', function(req, res) {
       console.log(err)
     } else if (rows) {
       console.log(rows);
-      res.render('pages/students', {rows: rows})
+      res.render('pages/students', {
+        rows: rows
+      })
     }
   });
 });
 
 app.get('/teachertransfer', function(req, res) {
-    res.render('pages/teachertransfer')
+  res.render('pages/teachertransfer')
 });
 
-var server = app.listen(5000, function () {
+var server = app.listen(5000, function() {
   var PORT = 5000
   console.log('User Conncted')
 })
